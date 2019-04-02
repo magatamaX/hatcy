@@ -1,0 +1,37 @@
+{
+  "name": "hatcy",
+  "version": "1.0.0",
+  "description": "おにいさんフロントエンド",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magatamaX/hatcy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magatamaX/hatcy/issues"
+  },
+  "homepage": "https://github.com/magatamaX/hatcy#readme",
+  "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
+    "autoprefixer": "^9.5.0",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^8.0.4",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "megane": "^5.0.2"
+  }
+}
