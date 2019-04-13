@@ -9,10 +9,17 @@ function getPosts() {
   ]
 }
 
-const PostLink = ({ post }) => (
+interface Props {
+  post: {
+    id: string
+    title: string
+  }
+}
+
+const PostLink = ( props: Props ) => (
   <li>
-    <Link as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
-      <a>{post.title}</a>
+    <Link as={`/p/${props.post.id}`} href={`/post?title=${props.post.title}`}>
+      <a>{props.post.title}</a>
     </Link>
   </li>
 )
