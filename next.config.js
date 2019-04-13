@@ -5,6 +5,7 @@ const withSass = require('@zeit/next-sass')
 
 module.exports = withTypescript(
     withSass({
+        cssModules: true,
         sassLoaderOptions: {
             url: false
         },

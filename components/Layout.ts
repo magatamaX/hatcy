@@ -1,9 +1,9 @@
 import Header from './Header'
-import './../styles/scss/style.scss'
+import baseStyle from './../styles/fw.scss';
 
 
 const Layout = props => (
-  <div className="fw">
+  <div className={baseStyle['fw']}>
     <Header />
     {props.children}
   </div>
