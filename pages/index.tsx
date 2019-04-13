@@ -1,4 +1,4 @@
-import Layout from '../components/Layout'
+import Layout from '../components/Layout/index'
 import Link from 'next/link'
 
 function getPosts() {

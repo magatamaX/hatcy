@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import './../styles/fw.scss';
+@import './../../styles/fw.scss';
 
 .button {
     @include fontSize(40px);
