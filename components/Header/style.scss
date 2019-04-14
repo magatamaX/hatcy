@@ -5,3 +5,37 @@
 .button {
     @include fontSize(40px);
 }
+
+.header {
+    @include height(90px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 2px #ccc;
+}
+
+.inner {
+    position: relative;
+    @include width(100%);
+    @include height(100%);
+    @include pd(20px);
+}
+
+.title {
+    @include width(160px);
+    position: absolute;
+    @include top(50%);
+    @include left(20px);
+    transform: translateY(-50%);
+}
+
+.list {
+    @include width(520px);
+    position: absolute;
+    @include top(50%);
+    @include left(50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
