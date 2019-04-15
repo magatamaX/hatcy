@@ -1,5 +1,6 @@
 import Layout from '../components/Layout/index'
 import Link from 'next/link'
+import Kv from '../components/index/Kv/index'
 
 function getPosts() {
   return [
@@ -24,14 +25,10 @@ const PostLink = ( props: Props ) => (
   </li>
 )
 
-export default function Blog() {
+export default function Top() {
   return (
     <Layout>
-      <h1>My Blog</h1>
-      <div className="f-flex">
-        <div className="f-flex6">aaaa</div>
-        <div className="f-flex6">aaarr</div>
-      </div>
+      <Kv />
       <ul>
         {getPosts().map(post => (
           <PostLink key={post.id} post={post} />

@@ -14,6 +14,7 @@
     width: 100%;
     background-color: #fff;
     box-shadow: 0 2px 2px #ccc;
+    z-index: 10;
 }
 
 .inner {
@@ -38,4 +39,32 @@
     @include left(50%);
     transform: translate(-50%,-50%);
     text-align: center;
+}
+
+.sns {
+    @include width(120px);
+    position: absolute;
+    @include top(50%);
+    @include right(140px);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.contact {
+    position: absolute;
+    @include top(0);
+    @include right(0);
+    @include width(100px);
+    @include height(100%);
+    background-color: $color_button_blue;
+    color: #fff;
+    
+
+     a {
+        color: #fff;
+        line-height: 1.8;
+        @include width(100%);
+        @include height(100%);
+        @include flexBase( $wrap: "nowrap", $direction: "column", $justify: "center", $align: "center" );
+    }
 }

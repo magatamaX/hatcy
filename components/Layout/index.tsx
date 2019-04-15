@@ -25,7 +25,9 @@ class Layout extends React.Component {
         <div className={css['container']}>
           <Header />
           <main id="contents" className={css['f-max']}>
-          {this.props.children}
+            <div className={css.wrapper}>
+              {this.props.children}
+            </div>
           </main>
         </div>
       </div>
