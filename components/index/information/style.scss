@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.information {
+    @include pt(90px);
+    border-top: 2px dashed rgba(#000, 0.1);
+    @include mt(10px);
+}
+
+.inner {
+    position: relative;
+    @include height(536px);
+}
+
+.title {
+    position: absolute;
+    @include right(0);
+    @include top(-10px);
+
+    @include width(306px);
+}
+
+.fukidashi {
+    position: absolute;
+    @include left(0);
+    @include top(0);
+
+    @include width(456px);
+    background-color: $color_main;
+    border-radius: 10px;
+
+    @include pd(10px 30px 30px);
+
+    box-shadow: -10px 10px 0 #ccc;
+
+    z-index: 0;
+
+    &::before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 40px 40px 0;
+        border-color: transparent #ccc transparent transparent;
+        z-index: 1;
+
+        position: absolute;
+        @include bottom(-45px);
+        @include right(50px);
+    }
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 40px 40px 0;
+        border-color: transparent $color_main transparent transparent;
+        z-index: 2;
+
+        position: absolute;
+        @include bottom(-40px);
+        @include right(40px);
+    }
+}
+
+.list {
+
+}
+
+.item {
+    border-bottom: 1px solid rgba(#000, .3);
+    @include pd(20px 0);
+}
+
+.linkbox {
+    @include pr(30px);
+    color: #000;
+    display: block;
+
+    @include arrowAbs($color:$color_button_blue, $size:6, $width:1,$layout:right,$position:10,$direction:right);
+}
+
+.content {
+
+}
+
+.date {
+    line-height: 1;
+    @include fontSize(11px);
+    @include mb(5px);
+}
+
+.text {
+    line-height: 1.4;
+    max-height: 2.8em;
+    overflow: hidden;
+    @include fontSize(15px);
+}
+
+
+.hatchy {
+    position: absolute;
+    @include right(-93px);
+    @include bottom(0);
+}
+
+.buttonArea {
+    text-align: right;
+    @include mt(20px);
+}
+
+.pa {
+    position: absolute;
+    @include top(160px);
+    @include right(250px);
+    @include width(40px);
+}

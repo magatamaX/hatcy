@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.button {
+    display: inline-block;
+    text-align: center;
+    border-radius: 500px;
+}
+
+.small {
+
+}
+
+.medium {
+    @include width(150px);
+    @include fontSize(14px);
+    line-height: 1.2;
+    @include pd(15px 0);
+
+}
+
+.large {
+
+}
+
+.blue {
+    background-color: $color_button_blue;
+    color: #fff;
+}
+
+.yellow {
+    background-color: $color_main;
+    color: #000;
+}
+
+.shadow {
+    box-shadow: 0 2px 0 rgba(#000, .25);
+}

@@ -1,6 +1,7 @@
 import Layout from '../components/Layout/index'
 import Link from 'next/link'
 import Kv from '../components/index/Kv/index'
+import Information from '../components/index/information/index'
 
 function getPosts() {
   return [
@@ -29,6 +30,7 @@ export default function Top() {
   return (
     <Layout>
       <Kv />
+      <Information />
       <ul>
         {getPosts().map(post => (
           <PostLink key={post.id} post={post} />
