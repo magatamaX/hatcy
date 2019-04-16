@@ -17,11 +17,14 @@
     @include fontSize(14px);
     line-height: 1.2;
     @include pd(15px 0);
-
 }
 
 .large {
-
+    @include width(346px);
+    @include fontSize(20px);
+    font-weight: 700;
+    line-height: 1.2;
+    @include pd(20px 0);
 }
 
 .blue {

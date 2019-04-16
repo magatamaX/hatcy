@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.profile {
+    @include pt(90px);
+    border-top: 2px dashed rgba(#000, 0.1);
+}
+
+.inner {
+    position: relative;
+    @include height(530px);
+}
+
+.title {
+    position: absolute;
+    @include left(0);
+    @include top(20px);
+
+    @include width(232px);
+}
+
+.box {
+    position: absolute;
+    @include right(0);
+    @include top(0);
+
+    @include width(420px);
+    background-color: $color_sub;
+    color: #fff;
+    border-radius: 10px;
+
+    @include pd(50px 30px 30px);
+
+    box-shadow: 10px 10px 0 #ccc;
+
+    z-index: 1;
+}
+
+.namebox {
+    @include pd(0 35px);
+    @include mb(30px);
+}
+
+.katagaki {
+    display: block;
+    @include fontSize(15px);
+    font-weight: 700;
+    @include mb(10px);
+}
+
+.name {
+    display: block;
+    font-family: $font_logojr;
+    font-weight: 900;
+    @include fontSize(43px);
+    letter-spacing: .1em;
+    @include mb(10px);
+}
+
+.nameEnglish {
+    display: block;
+    @include fontSize(11px);
+    text-align: right;
+}
+
+.intro {
+    @include fontSize(15px);
+    line-height: 27px;
+}
+
+.buttonArea {
+    text-align: right;
+    @include mt(30px);
+}
+
+.hatchy {
+    position: absolute;
+    @include left(-93px);
+    @include bottom(0);
+
+    z-index: 0;
+}

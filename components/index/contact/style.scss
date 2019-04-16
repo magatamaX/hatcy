@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.contact {
+    border-top: 2px dashed rgba(#000, 0.1);
+    @include pt(60px);
+}
+
+.titlebox {
+    text-align: center;
+}
+
+.engTitle {
+    @include fontSize(36px);
+    font-family: $font_logojr;
+
+    &:first-letter {
+        @include fontSize(48px);
+    }
+}
+
+.title {
+    @include fontSize(19px);
+    @include mt(20px);
+    letter-spacing: 0.1em;
+    line-height: 1;
+}
+
+.contactbox {
+    background-color: $color_button_blue;
+    color: #fff;
+    @include mt(40px);
+    @include pd(60px 0 50px);
+    text-align: center;
+    @include fontSize(15px);
+    line-height: 26px;
+}
+
+.buttonArea {
+    @include mt(40px);
+}

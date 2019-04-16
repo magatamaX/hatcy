@@ -1,4 +1,5 @@
 import Header from './../Header/index'
+import Footer from './../Footer/index'
 import css from './style.scss'
 
 class Layout extends React.Component {
@@ -29,6 +30,7 @@ class Layout extends React.Component {
               {this.props.children}
             </div>
           </main>
+          <Footer />
         </div>
       </div>
     )

@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+@import './../../styles/fw.scss';
+
+.footer {
+    @include height(100px);
+    background-color: #fff;
+}
+
+.inner {
+    position: relative;
+    @include width(100%);
+    @include height(100%);
+}
+
+.copyright {
+    position: absolute;
+    @include fontSize(15px);
+    @include top(50%);
+    @include left(40px);
+    transform: translateY(-50%);
+}
+
+.sns {
+    @include width(120px);
+    position: absolute;
+    @include top(50%);
+    @include right(50px);
+    transform: translateY(-50%);
+    text-align: center;
+}
