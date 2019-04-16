@@ -48,7 +48,7 @@ const Information = () => (
                         color="blue"
                         text="もっと見る"
                         size="medium"
-                        url=""
+                        path="/information"
                         shadow={true}
                     />
                 </div>

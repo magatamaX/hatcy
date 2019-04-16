@@ -15,7 +15,7 @@ const Performance = () => (
                 </div>
                 <div className={css.youtube}>
                     <div className={css.iframewrap}>
-                        <iframe className={css.iframe} width="560" height="315" src="https://www.youtube.com/embed/dmSENV5lZ-4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
+                        <iframe className={css.iframe} width="560" height="315" src="https://www.youtube.com/embed/dmSENV5lZ-4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                     </div>
                 </div>
             </div>

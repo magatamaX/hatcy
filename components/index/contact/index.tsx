@@ -15,7 +15,7 @@ const Contact = () => (
                         color="yellow"
                         text="お問い合わせ"
                         size="large"
-                        url=""
+                        path=""
                     />
                 </div>
             </div>

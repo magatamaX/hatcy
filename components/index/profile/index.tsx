@@ -23,7 +23,7 @@ const Profile = () => (
                         color="yellow"
                         text="もっと見る"
                         size="medium"
-                        url=""
+                        path=""
                         shadow={true}
                     />
                 </dd>
