@@ -10,7 +10,7 @@
 	font-size: $font-size_base + px;
     line-height: $line-height_base;
     
-    .f-max { float: inherit; width: auto; margin: 0 auto; }
+    .fMax { float: inherit; width: auto; margin: 0 auto; }
 
 
 	// -------------------------------------------
@@ -18,7 +18,7 @@
 	// -------------------------------------------
 	@include max( s ){
 
-		.f-inner {
+		.fInner {
 			width: 100%;
 			margin: 0;
 			padding: 0 vw(30);
@@ -36,7 +36,7 @@
 		// font-size: vw($sp-font-size_base);
         // line-height: $sp-line-height_base;
         
-        .f-max { float: inherit; width: 100%; }
+        .fMax { float: inherit; width: 100%; }
 
 	}
 
