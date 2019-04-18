@@ -6,18 +6,18 @@ import Instagram from './../../svg/instagram.svg'
 import Twitter from './../../svg/twitter.svg'
 
 const Sns = () => (
-    <ul className={`${css.sns} ${css['f-flex']} ${css['f-flex_mg20']}`}>
-        <li className={css['f-flex4']}>
+    <ul className={`${css.sns} ${css.fFlex} ${css.fFlex_mg20}`}>
+        <li className={css.fFlex4}>
             <Link href="">
                 <a><Facebook /></a>
             </Link>
         </li>
-        <li className={css['f-flex4']}>
+        <li className={css.fFlex4}>
             <Link href="">
                 <a><Instagram /></a>
             </Link>
         </li>
-        <li className={css['f-flex4']}>
+        <li className={css.fFlex4}>
             <Link href="">
                 <a><Twitter /></a>
             </Link>

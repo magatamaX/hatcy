@@ -8,10 +8,6 @@
     border-radius: 500px;
 }
 
-.small {
-
-}
-
 .medium {
     @include width(150px);
     @include fontSize(14px);

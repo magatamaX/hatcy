@@ -2,7 +2,7 @@ import css from './style.scss'
 
 const Performance = () => (
     <section id="performance" className={css.performance}>
-        <div className={`${css['f-inner']} ${css.inner}`}>
+        <div className={`${css.fInner} ${css.inner}`}>
             <h2 className={css.title}>
                 <img src="/static/images/index/performance/title.svg" alt="プロフィール" />
             </h2>

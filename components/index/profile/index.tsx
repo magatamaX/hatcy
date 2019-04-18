@@ -5,7 +5,7 @@ const introText = '1999年よりジャグリング、2008年より身体表現�
 
 const Profile = () => (
     <section id="profile" className={css.profile}>
-        <div className={`${css['f-inner']} ${css.inner}`}>
+        <div className={`${css.fInner} ${css.inner}`}>
             <h2 className={css.title}>
                 <img src="/static/images/index/profile/title.svg" alt="プロフィール" />
             </h2>

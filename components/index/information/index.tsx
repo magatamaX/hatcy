@@ -22,7 +22,7 @@ const list = [
 
 const Information = () => (
     <section id="information" className={css.information}>
-        <div className={`${css['f-inner']} ${css.inner}`}>
+        <div className={`${css.fInner} ${css.inner}`}>
             <h2 className={css.title}>
                 <img src="/static/images/index/information/title.svg" alt="お知らせ" />
             </h2>

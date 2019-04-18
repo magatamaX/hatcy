@@ -17,10 +17,10 @@ class Layout extends React.Component {
 
   render() {
     return (
-      <div className={css['fw']}>
-        <div className={css['container']}>
+      <div className={css.fw}>
+        <div className={css.container}>
           <Header />
-          <main id="contents" className={css['f-max']}>
+          <main id="contents" className={css.fMax}>
             <div className={css.wrapper}>
               {this.props.children}
             </div>
