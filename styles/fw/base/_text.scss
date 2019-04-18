@@ -8,20 +8,20 @@
 // ----------------------------------------------------------
 // Align
 // ----------------------------------------------------------
-.f-txt_left { text-align: left !important; }
-.f-txt_center { text-align: center !important; }
-.f-txt_right { text-align: right !important; }
+.fTxt_left { text-align: left !important; }
+.fTxt_center { text-align: center !important; }
+.fTxt_right { text-align: right !important; }
 
 // ----------------------------------------------------------
 // Text Color
 // ----------------------------------------------------------
 @each $key, $value in $colors {
-	.f-txt_#{$key} { color: #{$value} !important;}
+	.fTxt_#{$key} { color: #{$value} !important;}
 }
 
 // ----------------------------------------------------------
 // Letter Spacing
 // ----------------------------------------------------------
-.f-space_s { letter-spacing: -0.02em !important; }
-.f-space_m { letter-spacing: 0.03em !important;}
-.f-space_l { letter-spacing: 0.08em !important;}
+.fSpace_s { letter-spacing: -0.02em !important; }
+.fSpace_m { letter-spacing: 0.03em !important;}
+.fSpace_l { letter-spacing: 0.08em !important;}

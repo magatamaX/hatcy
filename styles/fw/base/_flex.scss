@@ -6,7 +6,7 @@
 //
 // ---------------------------------------------------------------------------
 
-.f-flex{
+.fFlex{
 
 	@include flexBase();
 	@include flex();
@@ -14,11 +14,11 @@
 	@include flexMb();
 	@include flexOrder();
 
-	&.f-flex_middle {
+	&.fFlex_middle {
 		@include flexBase( $align: "center" );
 	}
 
-	&.f-flex_justify {
+	&.fFlex_justify {
 		& > * {
 			flex: 1;
 		}

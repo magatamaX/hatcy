@@ -8,18 +8,18 @@
 
 // Defalt
 // -----------------------------------------------------
-.f-table {
+.fTable {
 
 	display:table;
 	width: 100%;
 	table-layout: fixed;
 
-	> *:not(.f-table_row) {
+	> *:not(.fTable_row) {
 		display: table-cell;
 		vertical-align: middle;
 	}
 
-	> .f-table_row {
+	> .fTable_row {
 		display: table-row;
 		> * {
 			display: table-cell;
@@ -30,10 +30,10 @@
 
 }//.table
 
-.f-table,
-.f-table > .f-table_row {
+.fTable,
+.fTable > .fTable_row {
 
-	$class: "f-cell";
+	$class: "fCell";
 
 	@include SetPerBreakpointMixin( $class, $mixin: 'tableCell' );
 
