@@ -14,6 +14,9 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "esnext"
+    "target": "esnext",
+    "rootDirs": [
+      "typings"
+    ]
   }
 }

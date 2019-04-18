@@ -1,9 +1,10 @@
 import Header from './../Header/index'
 import Footer from './../Footer/index'
 import css from './style.scss'
+import React from 'react'
 
 class Layout extends React.Component {
-  constructor(props) {
+  constructor(props: any) {
     super(props);
   }
 

@@ -16,6 +16,7 @@ const Contact = () => (
                         text="お問い合わせ"
                         size="large"
                         path=""
+                        shadow={false}
                     />
                 </div>
             </div>

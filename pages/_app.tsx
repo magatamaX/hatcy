@@ -2,7 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 
 class Hatchy extends App {
-  static async getInitialProps({ Component, ctx }) {
+  static async getInitialProps({ Component, ctx } : { Component: any, ctx: any}) {
     let pageProps = {};
 
     if (Component.getInitialProps) {
