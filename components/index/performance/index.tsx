@@ -1,6 +1,16 @@
 import css from './style.scss'
 
-const Performance = () => (
+const Performance = (
+    {
+        list,
+        current,
+        onChangeVideo
+    } :
+    {
+        list: {[key: string]: any}[],
+        current: string,
+        onChangeVideo: (id: string) => void
+    }) => (
     <section id="performance" className={css.performance}>
         <div className={`${css.fInner} ${css.inner}`}>
             <h2 className={css.title}>
@@ -15,11 +25,25 @@ const Performance = () => (
                 </div>
                 <div className={css.youtube}>
                     <div className={css.iframewrap}>
-                        <iframe className={css.iframe} width="560" height="315" src="https://www.youtube.com/embed/dmSENV5lZ-4" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                        <iframe className={css.iframe}
+                            src={`https://www.youtube.com/embed/${current}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        />
                     </div>
                 </div>
             </div>
-            <div className={css.playlist}></div>
+            <div className={css.playlist}>
+                <ul>
+                    {list.map((item, i) => (
+                        <li key={i} onClick={() => onChangeVideo( item.snippet.resourceId.videoId )}>
+                            <p>{item.snippet.title}</p>
+                            <p><img src={item.snippet.thumbnails.medium.url} alt="" /></p>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     </section>
 )
