@@ -5,7 +5,7 @@ import Items from '../components/information/Items'
 const list = [
   {
     img: 'https://unsplash.it/800/600/?image=1084',
-    path: '/',
+    path: '/p/975',
     text: 'ここに見出しの文章が入ります。ここに見出しの文章が入ります。ここに見出しの文章が入ります。ここに見出しの文章が入ります。',
     date: '2018.2.24',
   },

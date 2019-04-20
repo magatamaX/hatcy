@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.article {
+    @include mb(150px);
+}
+
+.title {
+    @include fontSize(28px);
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.date {
+    @include fontSize(12px);
+    color: #666666;
+    @include mt(10px);
+    line-height: 1;
+}
+
+.contents {
+    @include fontSize(15px);
+    @include mt(60px);
+
+    > p + p {
+        @include mt(40px);
+    }
+}
+
+.snsArea {
+    @include mt(60px);
+    border-top: 1px solid #ccc;
+    @include pt(40px);
+    text-align: center;
+}
+
+.snsTitle {
+    @include fontSize(18px);
+    font-weight: 700;
+}
+
+.sns {
+    @include mg(40px auto 0);
+    @include width(200px);
+}
+
+

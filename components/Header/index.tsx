@@ -30,15 +30,17 @@ const Header = () => (
           <a><img src="/static/images/header/title.svg" alt="" /></a>
         </Link>
       </h1>
-      <ul className={`${css.list} ${css.fFlex} ${css.fFlex_mg30}`}>
-        {items.map((item, index) => (
-          <li key={index} className={css.fFlex3}>
-            <Link href={item.href}>
-              <a>{item.display}</a>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <nav>
+        <ul className={`${css.list} ${css.fFlex} ${css.fFlex_mg30}`}>
+          {items.map((item, index) => (
+            <li key={index} className={css.fFlex3}>
+              <Link href={item.href}>
+                <a>{item.display}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
       <div className={css.sns}>
         <Sns />
       </div>
