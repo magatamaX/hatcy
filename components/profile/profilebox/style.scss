@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.profile {
+    @include width(1000px);
+    @include mg(0 auto);
+    position: relative;
+}
+
+.kv {
+    text-align: right;
+}
+
+.text {
+    position: absolute;
+    @include width(600px);
+    @include height(300px);
+    @include pd(0 40px);
+    @include top(10%);
+    @include left(0);
+    background-color: #000;
+    color: #fff;
+    box-shadow: 5px 5px 10px hsla(0,0%,0%,0.3);
+    @include flexBase( $wrap: "nowrap", $direction:  "column", $justify: "center", $align: "flex-start" );
+}
+
+.title {
+    @include mb(20px);
+}
+
+.shoukai {
+    @include fontSize(14px);
+    line-height: 1.8;
+}
+
+.katagaki {
+    @include fontSize(22px);
+    display: block;
+    @include mb(10px);
+}
+
+.name {
+    @include fontSize(44px);
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    display: block;
+    @include mb(15px);
+}
+
+.engName {
+    @include fontSize(22px);
+    display: block;
+}
+
+.kv {
+    img {
+        max-width: 700px;
+    }
+}

@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+@import './../../../styles/fw.scss';
+
+.table {
+    @include width(100%);
+    table-layout: fixed;
+    border-bottom: 1px solid #ccc;
+    @include mb(100px);
+}
+
+.tr {
+    border-top: 1px solid #ccc;
+}
+
+.th {
+    @include width(200px);
+    vertical-align: center;
+    text-align: center;
+    @include fontSize(18px);
+    font-weight: 700;
+    color: #ccc;
+}
+
+.td {
+    vertical-align: center;
+    @include pd(40px 15px);
+}
