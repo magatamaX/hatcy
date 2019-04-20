@@ -18,6 +18,15 @@
     position: absolute;
     @include top(90px);
     @include left(50%);
+
+    transform-origin: bottom right;
+    
+    opacity: 0;
+
+    &.on {
+        opacity: 1;
+        animation: aniRotate 1500ms linear both;
+    }
 }
 
 .videobox {
@@ -29,6 +38,12 @@
     @include bottom(100%);
     @include left(50px);
     z-index: -1;
+    transform: translate3d(0,100%,0);
+    transition: transform 300ms ease-out 500ms;
+
+    &.on {
+        transform: translate3d(0,0,0);
+    }
 }
 
 .youtube {
@@ -109,4 +124,19 @@
     @include fontSize(12px);
     line-height: 1.4;
     transition: bottom .4s ease-out;
+}
+
+
+
+@keyframes aniRotate { 
+    0% { transform: matrix3d(0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    4.3% { transform: matrix3d(0.723, 0.691, 0, 0, -0.691, 0.723, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    8.61% { transform: matrix3d(0.982, 0.19, 0, 0, -0.19, 0.982, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    12.91% { transform: matrix3d(0.997, -0.082, 0, 0, 0.082, 0.997, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    17.22% { transform: matrix3d(0.989, -0.146, 0, 0, 0.146, 0.989, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    28.33% { transform: matrix3d(0.999, -0.032, 0, 0, 0.032, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    39.44% { transform: matrix3d(1, 0.01, 0, 0, -0.01, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    61.66% { transform: matrix3d(1, -0.001, 0, 0, 0.001, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    83.98% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
+    100% { transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
 }

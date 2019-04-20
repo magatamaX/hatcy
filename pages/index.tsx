@@ -6,9 +6,17 @@ import Performance from '../components/index/performance/index'
 import Contact from '../components/index/contact/index'
 import React from 'react'
 import fetch from 'isomorphic-unfetch'
+import { connect } from 'react-redux'
+import {
+  load, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
+} from '../store'
 
 interface Props {
-  list: any[]
+  list: any[],
+  isAniKvDone: boolean,
+  isAniInformationDone: boolean,
+  isAniProfileDone: boolean,
+  isAniPerformanceDone: boolean
 }
 interface State {
   currentVideo: string,
@@ -16,7 +24,7 @@ interface State {
 
 class Top extends React.Component<Props, State> {
 
-  constructor( props: any ) {
+  constructor( props: Props ) {
     super(props)
 
     console.log(props)
@@ -25,6 +33,12 @@ class Top extends React.Component<Props, State> {
       currentVideo: props.list[0].snippet.resourceId.videoId
     }
   }
+
+  private kvRef = React.createRef<HTMLDivElement>();
+  private informationRef = React.createRef<HTMLDivElement>();
+  private profileRef = React.createRef<HTMLDivElement>();
+  private performanceRef = React.createRef<HTMLDivElement>();
+
 
   static async getInitialProps() {
     const url = 'https://www.googleapis.com/youtube/v3/playlistItems'
@@ -52,22 +66,84 @@ class Top extends React.Component<Props, State> {
 
   }
 
+  ani(): void {
+
+    const targets: any[] = [
+      this.kvRef,
+      this.informationRef,
+      this.profileRef,
+      this.performanceRef,
+    ]
+
+    const callback = (entries: any) => {
+
+        entries.forEach((entry: any) => {
+            
+            if ( entry.isIntersecting ) {
+
+                console.log(`${entry.target.id}が見えました。`)
+                console.log(entry)
+                const key = entry.target.dataset.action
+                this.props[key]()
+                console.log(`${entry.target.id}の監視を解除します。`)
+                observer.unobserve(entry.target);
+
+            }
+
+          });
+    }
+    const observer = new IntersectionObserver(callback, {
+        threshold: [ 0.8 ]
+    });
+
+    targets.forEach((target: any) => {
+      observer.observe(target.current)
+    })
+  }
+
+  componentDidMount() {
+
+    this.ani()
+
+  }
+
   render() {
     console.log(this.state.currentVideo)
     return (
       <Layout>
-        <Kv />
-        <Information />
-        <Profile />
-        <Performance
-          list={this.props.list}
-          current={this.state.currentVideo}
-          onChangeVideo={(id) => this.onChangeVideo(id)}
-        />
-        <Contact />
+        <section id="kv" data-action="aniKv" ref={this.kvRef}>
+          <Kv isAniKvDone={this.props.isAniKvDone} />
+        </section>
+        <section id="information" data-action="aniInformation" ref={this.informationRef}>
+          <Information isAniInformationDone={this.props.isAniInformationDone} />
+        </section>
+        <section id="profile" data-action="aniProfile" ref={this.profileRef}>
+          <Profile isAniProfileDone={this.props.isAniProfileDone} />
+        </section>
+        <section id="performance" data-action="aniPerformance" ref={this.performanceRef}>
+          <Performance
+            isAniPerformanceDone={this.props.isAniPerformanceDone}
+            list={this.props.list}
+            current={this.state.currentVideo}
+            onChangeVideo={(id) => this.onChangeVideo(id)}
+          />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </Layout>
     )
   }
 }
 
-export default Top
+const mapStateToProps = (state: any) => {
+  return { ...state }
+}
+const mapDispatchToProps = {
+  load, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Top)

@@ -34,12 +34,16 @@
     "path": "^0.12.7",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.2",
     "react-slick": "^0.24.0",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
     "svg-react-loader": "^0.4.6",
     "typescript": "^3.4.1"
   },
   "devDependencies": {
     "@types/next": "^8.0.3",
+    "@types/react-redux": "^7.0.8",
     "@types/react-slick": "^0.23.3",
     "fork-ts-checker-webpack-plugin": "^1.0.1",
     "megane": "^5.0.2"

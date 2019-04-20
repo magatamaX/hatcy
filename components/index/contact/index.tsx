@@ -2,7 +2,7 @@ import css from './style.scss'
 import Button from './../../common/Button/index'
 
 const Contact = () => (
-    <section id="contact" className={css.contact}>
+    <div className={css.contact}>
         <div className={css.titlebox}>
             <p className={css.engTitle}>CONTACT</p>
             <h2 className={css.title}>お問い合わせ</h2>
@@ -21,7 +21,7 @@ const Contact = () => (
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 )
 
 export default Contact;

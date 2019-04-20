@@ -21,22 +21,24 @@ const settings: any = {
 
 const Performance = (
     {
+        isAniPerformanceDone,
         list,
         current,
         onChangeVideo
     } :
     {
+        isAniPerformanceDone: boolean,
         list: {[key: string]: any}[],
         current: string,
         onChangeVideo: (id: string) => void
     }) => (
-    <section id="performance" className={css.performance}>
+    <div className={css.performance}>
         <div className={`${css.fInner} ${css.inner}`}>
-            <h2 className={css.title}>
+            <h2 className={`${css.title} ${isAniPerformanceDone ? css.on : ''}`}>
                 <img src="/static/images/index/performance/title.svg" alt="プロフィール" />
             </h2>
             <div className={css.videobox}>
-                <figure className={css.hatchy}>
+                <figure className={`${css.hatchy} ${isAniPerformanceDone ? css.on : ''}`}>
                     <img src="/static/images/index/performance/yellow_hatchy_mini.png" alt="徳島はっちー" />
                 </figure>
                 <div className={css.frame}>
@@ -68,7 +70,7 @@ const Performance = (
                 ))}
             </Slider>
         </div>
-    </section>
+    </div>
 )
 
 export default Performance;

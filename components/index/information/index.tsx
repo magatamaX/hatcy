@@ -20,13 +20,13 @@ const list = [
     },
 ]
 
-const Information = () => (
-    <section id="information" className={css.information}>
+const Information = ({ isAniInformationDone } : { isAniInformationDone: boolean }) => (
+    <div className={css.information}>
         <div className={`${css.fInner} ${css.inner}`}>
-            <h2 className={css.title}>
+            <h2 className={`${css.title} ${isAniInformationDone ? css.on : ''}`}>
                 <img src="/static/images/index/information/title.svg" alt="お知らせ" />
             </h2>
-            <div className={css.fukidashi}>
+            <div className={`${css.fukidashi} ${isAniInformationDone ? css.on : ''}`}>
                 <ul className={css.list}>
                     {list.map((item, i) => (
                         <li key={i} className={css.item}>
@@ -53,14 +53,14 @@ const Information = () => (
                     />
                 </div>
             </div>
-            <figure className={css.hatchy}>
+            <figure className={`${css.hatchy} ${isAniInformationDone ? css.on : ''}`}>
                 <img src="/static/images/index/information/yellow_hatchy.png" alt="徳島はっちー" />
             </figure>
-            <div className={css.pa}>
+            <div className={`${css.pa} ${isAniInformationDone ? css.on : ''}`}>
                 <img src="/static/images/index/information/pa.svg" alt="" />
             </div>
         </div>
-    </section>
+    </div>
 )
 
 export default Information;
