@@ -9,11 +9,11 @@ class Layout extends React.Component {
   }
 
   componentDidMount() {
-    console.log('これはLayoutコンポーネントです。');
+
   }
 
   componentWillUnmount() {
-    console.log('Layoutコンポーネントがアンマウントされます!!')
+
   }
 
   render() {

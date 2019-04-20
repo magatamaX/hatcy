@@ -27,8 +27,6 @@ class Top extends React.Component<Props, State> {
   constructor( props: Props ) {
     super(props)
 
-    console.log(props)
-
     this.state = {
       currentVideo: props.list[0].snippet.resourceId.videoId
     }
@@ -81,11 +79,10 @@ class Top extends React.Component<Props, State> {
             
             if ( entry.isIntersecting ) {
 
-                console.log(`${entry.target.id}が見えました。`)
-                console.log(entry)
                 const key = entry.target.dataset.action
                 this.props[key]()
-                console.log(`${entry.target.id}の監視を解除します。`)
+
+                // entry.target.idの監視を解除
                 observer.unobserve(entry.target);
 
             }
@@ -108,7 +105,6 @@ class Top extends React.Component<Props, State> {
   }
 
   render() {
-    console.log(this.state.currentVideo)
     return (
       <Layout>
         <section id="kv" data-action="aniKv" ref={this.kvRef}>
