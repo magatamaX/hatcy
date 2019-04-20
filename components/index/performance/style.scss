@@ -8,7 +8,7 @@
 
 .inner {
     @include pt(220px);
-    @include pb(90px);
+    @include mb(50px);
     position: relative;
     // @include height(530px);
 }
@@ -57,4 +57,56 @@
     position: relative;
     z-index: 3;
     pointer-events: none;
+}
+
+.playlist {
+    @include mb(80px);
+}
+
+.slideItem {
+    @include pd(10px);
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+        .caption {
+            @include bottom(0);
+        }
+    }
+}
+
+.thumbBlock {
+    box-shadow: 2px 2px 5px rgba(#000, 0.2);
+}
+.thumbArea {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+        content: '';
+        display: block;
+        @include pt(56.25%);
+    }
+}
+
+.thumb {
+    display: block;
+    @include width(100%);
+    position: absolute;
+    @include top(50%);
+    @include left(0);
+    transform: translateY(-50%);
+}
+
+.caption {
+    position: absolute;
+    @include width(100%);
+    @include bottom(-60px);
+    @include left(0);
+    background-color: rgba(#000, 0.4);
+    color: #fff;
+    @include pd(10px);
+    @include fontSize(12px);
+    line-height: 1.4;
+    transition: bottom .4s ease-out;
 }

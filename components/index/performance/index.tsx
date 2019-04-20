@@ -1,4 +1,23 @@
 import css from './style.scss'
+import Slider from "react-slick";
+
+const settings: any = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 5,
+    speed: 500,
+    dots: false,
+    focusOnSelect: true,
+    responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+            }
+        }
+    ]
+};
 
 const Performance = (
     {
@@ -34,16 +53,20 @@ const Performance = (
                     </div>
                 </div>
             </div>
-            <div className={css.playlist}>
-                <ul>
-                    {list.map((item, i) => (
-                        <li key={i} onClick={() => onChangeVideo( item.snippet.resourceId.videoId )}>
-                            <p>{item.snippet.title}</p>
-                            <p><img src={item.snippet.thumbnails.medium.url} alt="" /></p>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+        </div>
+        <div className={css.playlist}>
+            <Slider {...settings}>
+                {list.map((item, i) => (
+                    <div className={css.slideItem} key={i} onClick={() => onChangeVideo( item.snippet.resourceId.videoId )}>
+                        <div className={`slick-thumbBlock ${css.thumbBlock}`}>
+                            <figure className={css.thumbArea}>
+                                <img className={css.thumb} src={item.snippet.thumbnails.standard.url} alt="" />
+                                <figcaption className={css.caption}>{item.snippet.title}</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                ))}
+            </Slider>
         </div>
     </section>
 )

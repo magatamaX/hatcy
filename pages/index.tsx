@@ -5,6 +5,7 @@ import Profile from '../components/index/profile/index'
 import Performance from '../components/index/performance/index'
 import Contact from '../components/index/contact/index'
 import React from 'react'
+import fetch from 'isomorphic-unfetch'
 
 interface Props {
   list: any[]
@@ -29,7 +30,7 @@ class Top extends React.Component<Props, State> {
     const url = 'https://www.googleapis.com/youtube/v3/playlistItems'
     const playlistId = 'PL8Mym-l4uq978vdSETUg4B4VLKoVU2pW-'
 
-    const params = new URLSearchParams()
+    const params: any = new URLSearchParams()
     params.set('part', 'snippet')
     params.set('playlistId', playlistId)
     params.set('maxResults', 20)
@@ -38,20 +39,17 @@ class Top extends React.Component<Props, State> {
     const res = await fetch(url + '?' + params.toString())
     const result = await res.json()
 
-    console.log(result);
-    console.log('ahahaha')
-
     return { list: result.items }
   }
 
-  onChangeVideo(id: string) {
-    console.log(`選択したビデオIDは${id}です。`)
+  onChangeVideo(id: string): void {
 
-    this.setState( () => {
+    this.setState(() => {
       return {
         currentVideo: id
       }
     })
+
   }
 
   render() {

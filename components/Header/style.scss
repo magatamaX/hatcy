@@ -41,6 +41,39 @@
     text-align: center;
 }
 
+.item {
+
+}
+
+.anchor {
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        content: '';
+        display: block;
+        @include width(100%);
+        @include height(20px);
+        position: absolute;
+        @include bottom(-3px);
+        @include left(0);
+        background-image: linear-gradient($color_main, $color_main);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 0% 5px;
+        transition: background-size .3s ease-out;
+    }
+
+    &:hover {
+
+        &::before {
+            background-size: 100% 5px;
+        }
+    }
+}
+
 .sns {
     @include width(120px);
     position: absolute;

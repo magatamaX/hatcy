@@ -5,19 +5,19 @@ import Sns from './../common/Sns/index'
 const items = [
   {
     display: "トップ",
-    href: "",
+    href: "#",
   },
   {
     display: "お知らせ",
-    href: "",
+    href: "#information",
   },
   {
     display: "プロフィール",
-    href: "",
+    href: "#profile",
   },
   {
     display: "パフォーマンス",
-    href: "",
+    href: "#performance",
   }
 ];
 
@@ -33,9 +33,9 @@ const Header = () => (
       <nav>
         <ul className={`${css.list} ${css.fFlex} ${css.fFlex_mg30}`}>
           {items.map((item, index) => (
-            <li key={index} className={css.fFlex3}>
+            <li key={index} className={`${css.item} ${css.fFlex3}`}>
               <Link href={item.href}>
-                <a>{item.display}</a>
+                <a className={css.anchor}>{item.display}</a>
               </Link>
             </li>
           ))}
