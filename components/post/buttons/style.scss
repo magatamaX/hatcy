@@ -3,6 +3,6 @@
 @import './../../../styles/fw.scss';
 
 .buttons {
-    @include mb(100px);
+    @include mb(100px, 10vw);
     text-align: center;
 }
