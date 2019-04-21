@@ -9,7 +9,7 @@ import fetch from 'isomorphic-unfetch'
 import mgnSmoothScroll from 'mgn-smooth-scroll';
 import { connect } from 'react-redux'
 import {
-  load, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
+  load, aniReset, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
 } from '../store'
 
 interface Props {
@@ -109,6 +109,7 @@ class Top extends React.Component<Props, State> {
 
   componentDidMount() {
 
+    this.props['aniReset']()
     this.ani()
 
     this.smoothScroll = new mgnSmoothScroll(
@@ -163,7 +164,7 @@ const mapStateToProps = (state: any) => {
   return { ...state }
 }
 const mapDispatchToProps = {
-  load, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
+  load, aniReset, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
 }
 
 export default connect(

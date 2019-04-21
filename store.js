@@ -18,6 +18,13 @@ export const reducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 isLoaded: true
             })
+        case 'ANI_RESET':
+            return Object.assign({}, state, {
+                isAniKvDone: false,
+                isAniInformationDone: false,
+                isAniProfileDone: false,
+                isAniPerformanceDone: false,
+            })
         case 'ANI_KV':
             return Object.assign({}, state, {
                 isAniKvDone: true,
@@ -50,6 +57,10 @@ export const reducer = (state = initialState, action) => {
 // ACTIONS
 export const load = () => {
     return { type: 'LOAD' }
+}
+
+export const aniReset = () => {
+    return { type: 'ANI_RESET' }
 }
 
 export const aniKv = () => {

@@ -6,6 +6,7 @@
     @include pt(90px, 10vw);
     border-top: 2px dashed rgba(#000, 0.1);
     @include mt(10px);
+    position: relative;
 }
 
 .inner {
@@ -163,6 +164,35 @@
     }
 }
 
+.bg1 {
+    position: absolute;
+    top: 25%;
+    right: 5%;
+    width: 300px;
+    height: 200px;
+    background-image: url('/static/images/common/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -1;
+}
+.bg2 {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    background-image: url('/static/images/common/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -1;
+}
+.bg1, .bg2 {
+    @include max(s) {
+        display: none;
+    }
+}
   
 /* Generated with Bounce.js. Edit at http://bouncejs.com#%7Bs%3A%5B%7BT%3A%22t%22%2Ce%3A%22b%22%2Cd%3A1000%2CD%3A500%2Cf%3A%7Bx%3A-800%2Cy%3A0%7D%2Ct%3A%7Bx%3A0%2Cy%3A0%7D%2Cs%3A3%2Cb%3A5%7D%5D%7D */
 

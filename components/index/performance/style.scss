@@ -4,6 +4,7 @@
 
 .performance {
     border-top: 2px dashed rgba(#000, 0.1);
+    position: relative;
 }
 
 .inner {
@@ -144,7 +145,59 @@
     }
 }
 
-
+.bg1 {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    width: 300px;
+    height: 200px;
+    background-image: url('/static/images/common/bg1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -2;
+}
+.bg2 {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    width: 300px;
+    height: 200px;
+    background-image: url('/static/images/common/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -2;
+}
+.bg3 {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    width: 300px;
+    height: 200px;
+    background-image: url('/static/images/common/bg3.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -2;
+}
+.bg4 {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    background-image: url('/static/images/common/bg4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: -2;
+}
+.bg1, .bg2, .bg3, .bg4 {
+    @include max(s) {
+        display: none;
+    }
+}
 
 @keyframes aniRotate { 
     0% { transform: matrix3d(0, 1, 0, 0, -1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }

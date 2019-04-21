@@ -32,6 +32,8 @@ const Profile = ({ isAniProfileDone } : { isAniProfileDone: boolean }) => (
                 <img src="/static/images/index/profile/blue_hatchy.png" alt="徳島はっちー" />
             </figure>
         </div>
+        <div className={css.bg1}></div>
+        <div className={css.bg2}></div>
     </div>
 )
 
