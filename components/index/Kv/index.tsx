@@ -9,6 +9,7 @@ const Kv = ({ isAniKvDone } : { isAniKvDone: boolean }) => (
             <div className={css.bg}>
                 <img className={css.bgContents} src="/static/images/index/kv/bg.jpg" alt="" />
             </div>
+            <div className={`${css.scroll} ${isAniKvDone ? css.on : ''}`}><span></span></div>
         </div>
     </div>
 )

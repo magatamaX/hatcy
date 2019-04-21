@@ -3,22 +3,22 @@
 @import './../../../styles/fw.scss';
 
 .information {
-    @include pt(90px);
+    @include pt(90px, 10vw);
     border-top: 2px dashed rgba(#000, 0.1);
     @include mt(10px);
 }
 
 .inner {
     position: relative;
-    @include height(536px);
+    @include height(536px, auto);
 }
 
 .title {
     position: absolute;
-    @include right(0);
-    @include top(-10px);
+    @include right(0, auto);
+    @include top(-10px, auto);
 
-    @include width(306px);
+    @include width(306px, 50vw);
 
     transform-origin: bottom right;
 
@@ -28,6 +28,12 @@
         opacity: 1;
         animation: aniRotate 1500ms linear both;
     }
+
+    @include max(s) {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .fukidashi {
@@ -35,11 +41,11 @@
     @include left(0);
     @include top(0);
 
-    @include width(456px);
+    @include width(456px, auto);
     background-color: $color_main;
     border-radius: 10px;
 
-    @include pd(10px 30px 30px);
+    @include pd(10px 30px 30px, 5vw);
 
     box-shadow: -10px 10px 0 #ccc;
 
@@ -77,6 +83,12 @@
     &.on {
         animation: aniLeft 1500ms linear both;
     }
+
+    @include max(s) {
+        position: relative;
+        box-shadow: -2vw 2vw 0 #ccc;
+        margin-top: 8vw;
+    }
 }
 
 .list {
@@ -85,7 +97,7 @@
 
 .item {
     border-bottom: 1px solid rgba(#000, .3);
-    @include pd(20px 0);
+    @include pd(20px 0, 10px 0);
 }
 
 .linkbox {
@@ -102,7 +114,7 @@
 
 .date {
     line-height: 1;
-    @include fontSize(11px);
+    @include fontSize(11px, 11px);
     @include mb(5px);
 }
 
@@ -110,7 +122,7 @@
     line-height: 1.4;
     max-height: 2.8em;
     overflow: hidden;
-    @include fontSize(15px);
+    @include fontSize(15px, 13px);
 }
 
 
@@ -124,17 +136,24 @@
     &.on {
         animation: aniRight 1500ms linear both;
     }
+
+    @include max(s) {
+        position: static;
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .buttonArea {
     text-align: right;
-    @include mt(20px);
+    @include mt(20px, 10px);
 }
 
 .pa {
     position: absolute;
-    @include top(160px);
-    @include right(250px);
+    @include top(160px, 108vw);
+    @include right(250px, 66vw);
     @include width(40px);
 
     opacity: 0;

@@ -9,7 +9,7 @@ const Contact = () => (
         </div>
         <div className={css.contactbox}>
             <div className={css.fInner}>
-                <p>大道芸・ピエロなど各種イベント出演依頼や、ご質問、ご相談など<br />こちらからお気軽にお問い合わせ下さい。</p>
+                <p>大道芸・ピエロなど各種イベント出演依頼や、ご質問、ご相談など<br className={css.br} />こちらからお気軽にお問い合わせ下さい。</p>
                 <div className={css.buttonArea}>
                     <Button
                         color="yellow"

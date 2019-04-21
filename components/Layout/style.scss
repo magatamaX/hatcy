@@ -21,7 +21,7 @@
 		.fInner {
 			width: 100%;
 			margin: 0;
-			padding: 0 vw(30);
+			padding: 0 15px;
 		}
 
 	}
@@ -44,5 +44,5 @@
 }//.fw
 
 .wrapper {
-	@include pt(90px);
+	@include pt(90px, 10vh);
 }

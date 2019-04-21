@@ -4,7 +4,7 @@
 
 .contact {
     border-top: 2px dashed rgba(#000, 0.1);
-    @include pt(60px);
+    @include pt(60px, 10vw);
 }
 
 .titlebox {
@@ -12,17 +12,17 @@
 }
 
 .engTitle {
-    @include fontSize(36px);
+    @include fontSize(36px, 24px);
     font-family: $font_logojr;
 
     &:first-letter {
-        @include fontSize(48px);
+        @include fontSize(48px, 36px);
     }
 }
 
 .title {
-    @include fontSize(19px);
-    @include mt(20px);
+    @include fontSize(19px, 14px);
+    @include mt(20px, 5px);
     letter-spacing: 0.1em;
     line-height: 1;
 }
@@ -30,13 +30,23 @@
 .contactbox {
     background-color: $color_button_blue;
     color: #fff;
-    @include mt(40px);
-    @include pd(60px 0 50px);
+    @include mt(40px, 8vw);
+    @include pd(60px 0 50px, 10vw 0);
     text-align: center;
-    @include fontSize(15px);
+    @include fontSize(15px, 13px);
     line-height: 26px;
+
+    @include max(s) {
+        line-height: 1.6;
+    }
 }
 
 .buttonArea {
-    @include mt(40px);
+    @include mt(40px, 8vw);
+}
+
+.br {
+    @include max(s) {
+        display: none;
+    }
 }

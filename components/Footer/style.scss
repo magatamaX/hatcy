@@ -3,7 +3,7 @@
 @import './../../styles/fw.scss';
 
 .footer {
-    @include height(100px);
+    @include height(100px, 8vh);
     background-color: #fff;
 }
 
@@ -15,10 +15,14 @@
 
 .copyright {
     position: absolute;
-    @include fontSize(15px);
+    @include fontSize(15px, 13px);
     @include top(50%);
-    @include left(40px);
+    @include left(40px, 50%);
     transform: translateY(-50%);
+
+    @include max(s) {
+        transform: translate(-50%, -50%);
+    }
 }
 
 .sns {
@@ -28,4 +32,8 @@
     @include right(50px);
     transform: translateY(-50%);
     text-align: center;
+
+    @include max(s) {
+        display: none;
+    }
 }

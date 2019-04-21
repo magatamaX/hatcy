@@ -3,34 +3,18 @@ import Footer from './../Footer/index'
 import css from './style.scss'
 import React from 'react'
 
-class Layout extends React.Component {
-  constructor(props: any) {
-    super(props);
-  }
-
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
-
-  }
-
-  render() {
-    return (
-      <div className={css.fw}>
-        <div className={css.container}>
-          <Header />
-          <main id="contents" className={css.fMax}>
-            <div className={css.wrapper}>
-              {this.props.children}
-            </div>
-          </main>
-          <Footer />
+const Layout = ({ children, top = false } : { children: any, top? : boolean }) => (
+  <div className={css.fw}>
+    <div className={css.container}>
+      <Header top={top} />
+      <main id="contents" className={css.fMax}>
+        <div className={css.wrapper}>
+          {children}
         </div>
-      </div>
-    )
-  }
-}
+      </main>
+      <Footer />
+    </div>
+  </div>
+)
 
 export default Layout

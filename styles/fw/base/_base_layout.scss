@@ -7,6 +7,10 @@
 	margin: 0 auto;
 	padding: 0;
 	@include clearfix;
+
+	@include max(s) {
+		padding: 0 15px;
+	}
 }
 
 .clearfix { @include clearfix; }

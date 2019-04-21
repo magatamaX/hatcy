@@ -7,17 +7,17 @@
 }
 
 .inner {
-    @include pt(220px);
-    @include mb(50px);
+    @include pt(220px, 10vw);
+    @include mb(50px, 6vw);
     position: relative;
     // @include height(530px);
 }
 
 .title {
-    @include width(340px);
+    @include width(340px, 50vw);
     position: absolute;
-    @include top(90px);
-    @include left(50%);
+    @include top(90px, auto);
+    @include left(50%, 10vw);
 
     transform-origin: bottom right;
     
@@ -27,16 +27,26 @@
         opacity: 1;
         animation: aniRotate 1500ms linear both;
     }
+
+    @include max(s) {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .videobox {
     position: relative;
+
+    @include max(s) {
+        margin-top: 10vw;
+    }
 }
 
 .hatchy {
     position: absolute;
     @include bottom(100%);
-    @include left(50px);
+    @include left(50px, 3vw);
     z-index: -1;
     transform: translate3d(0,100%,0);
     transition: transform 300ms ease-out 500ms;
@@ -44,14 +54,18 @@
     &.on {
         transform: translate3d(0,0,0);
     }
+
+    @include max(s) {
+        width: 28vw;
+    }
 }
 
 .youtube {
     position: absolute;
-    @include top(35px);
+    @include top(35px, 4vw);
     @include left(50%);
     transform: translateX(-50%);
-    @include width(710px);
+    @include width(710px, 82vw);
 }
 
 .iframewrap {
@@ -75,11 +89,11 @@
 }
 
 .playlist {
-    @include mb(80px);
+    @include mb(80px, 10vw);
 }
 
 .slideItem {
-    @include pd(10px);
+    @include pd(10px, 3px);
     cursor: pointer;
     outline: none;
 
@@ -124,6 +138,10 @@
     @include fontSize(12px);
     line-height: 1.4;
     transition: bottom .4s ease-out;
+
+    @include max(s) {
+        display: none;
+    }
 }
 
 

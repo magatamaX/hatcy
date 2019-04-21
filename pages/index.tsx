@@ -6,6 +6,7 @@ import Performance from '../components/index/performance/index'
 import Contact from '../components/index/contact/index'
 import React from 'react'
 import fetch from 'isomorphic-unfetch'
+import mgnSmoothScroll from 'mgn-smooth-scroll';
 import { connect } from 'react-redux'
 import {
   load, aniKv, aniInformation, aniProfile, aniPerformance, showPageTopBtn, hidePageTopBtn
@@ -32,6 +33,7 @@ class Top extends React.Component<Props, State> {
     }
   }
 
+  private smoothScroll = '';
   private kvRef = React.createRef<HTMLDivElement>();
   private informationRef = React.createRef<HTMLDivElement>();
   private profileRef = React.createRef<HTMLDivElement>();
@@ -67,20 +69,21 @@ class Top extends React.Component<Props, State> {
   ani(): void {
 
     const targets: any[] = [
-      this.kvRef,
-      this.informationRef,
-      this.profileRef,
-      this.performanceRef,
+      [this.kvRef, [0.5], this.props['aniKv']],
+      [this.informationRef, [0.7], this.props['aniInformation']],
+      [this.profileRef, [0.7], this.props['aniProfile']],
+      [this.performanceRef, [0.3], this.props['aniPerformance']],
     ]
 
-    const callback = (entries: any) => {
+    const setObserver = ( target: any, threshold: number[], func: Function ) => {
+
+      const callback = (entries: any) => {
 
         entries.forEach((entry: any) => {
             
             if ( entry.isIntersecting ) {
 
-                const key = entry.target.dataset.action
-                this.props[key]()
+                func()
 
                 // entry.target.idの監視を解除
                 observer.unobserve(entry.target);
@@ -88,13 +91,19 @@ class Top extends React.Component<Props, State> {
             }
 
           });
+      }
+
+      const observer = new IntersectionObserver(callback, {
+          threshold: threshold
+      });
+
+      observer.observe(target)
     }
-    const observer = new IntersectionObserver(callback, {
-        threshold: [ 0.8 ]
-    });
+
+
 
     targets.forEach((target: any) => {
-      observer.observe(target.current)
+      setObserver( target[0].current, target[1], target[2] );
     })
   }
 
@@ -102,21 +111,39 @@ class Top extends React.Component<Props, State> {
 
     this.ani()
 
+    this.smoothScroll = new mgnSmoothScroll(
+      ".j-smooth-scroll",
+      {
+          easing: "easeOutQuint",
+          ignore: ".ignore",
+          posFix: 60,
+          blank: true,
+      }
+    );
+
+    this.smoothScroll['ScrollEnd'] = function(){}
+
+  }
+
+  componentWillUnmount() {
+
+    this.smoothScroll = ''
+
   }
 
   render() {
     return (
-      <Layout>
-        <section id="kv" data-action="aniKv" ref={this.kvRef}>
+      <Layout top={true}>
+        <section id="kv" ref={this.kvRef}>
           <Kv isAniKvDone={this.props.isAniKvDone} />
         </section>
-        <section id="information" data-action="aniInformation" ref={this.informationRef}>
+        <section id="information" ref={this.informationRef}>
           <Information isAniInformationDone={this.props.isAniInformationDone} />
         </section>
-        <section id="profile" data-action="aniProfile" ref={this.profileRef}>
+        <section id="profile" ref={this.profileRef}>
           <Profile isAniProfileDone={this.props.isAniProfileDone} />
         </section>
-        <section id="performance" data-action="aniPerformance" ref={this.performanceRef}>
+        <section id="performance" ref={this.performanceRef}>
           <Performance
             isAniPerformanceDone={this.props.isAniPerformanceDone}
             list={this.props.list}

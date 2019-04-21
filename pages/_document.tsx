@@ -22,7 +22,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/css/slick-fix.css" />
         </Head>
-        <body>
+        <body id="pagetop">
           <Main />
           <NextScript />
         </body>

@@ -3,21 +3,21 @@
 @import './../../../styles/fw.scss';
 
 .profile {
-    @include pt(90px);
+    @include pt(90px, 10vw);
     border-top: 2px dashed rgba(#000, 0.1);
 }
 
 .inner {
     position: relative;
-    @include height(530px);
+    @include height(530px, auto);
 }
 
 .title {
     position: absolute;
-    @include left(0);
-    @include top(20px);
+    @include left(0, auto);
+    @include top(20px, auto);
 
-    @include width(232px);
+    @include width(232px, 40vw);
 
     transform-origin: bottom left;
 
@@ -27,6 +27,12 @@
         opacity: 1;
         animation: aniRotate 1500ms linear both;
     }
+
+    @include max(s) {
+        position: static;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .box {
@@ -34,12 +40,12 @@
     @include right(0);
     @include top(0);
 
-    @include width(420px);
+    @include width(420px, auto);
     background-color: $color_sub;
     color: #fff;
     border-radius: 10px;
 
-    @include pd(50px 30px 30px);
+    @include pd(50px 30px 30px, 5vw);
 
     box-shadow: 10px 10px 0 #ccc;
 
@@ -50,43 +56,61 @@
     &.on {
         animation: aniRight 1500ms linear both;
     }
+
+    @include max(s) {
+        position: relative;
+        box-shadow: -2vw 2vw 0 #ccc;
+        margin-top: 8vw;
+    }
 }
 
 .namebox {
-    @include pd(0 35px);
-    @include mb(30px);
+    @include pd(0 35px, 0);
+    @include mb(30px, 10px);
+
+    @include max(s) {
+        text-align: center;
+    }
 }
 
 .katagaki {
     display: block;
-    @include fontSize(15px);
+    @include fontSize(15px, 14px);
     font-weight: 700;
-    @include mb(10px);
+    @include mb(10px, 3px);
 }
 
 .name {
     display: block;
     font-family: $font_logojr;
     font-weight: 900;
-    @include fontSize(43px);
+    @include fontSize(43px, 28px);
     letter-spacing: .1em;
-    @include mb(10px);
+    @include mb(10px, 3px);
 }
 
 .nameEnglish {
     display: block;
-    @include fontSize(11px);
+    @include fontSize(11px, 11px);
     text-align: right;
+
+    @include max(s) {
+        text-align: center;
+    }
 }
 
 .intro {
-    @include fontSize(15px);
+    @include fontSize(15px, 13px);
     line-height: 27px;
+
+    @include max(s) {
+        line-height: 1.6;
+    }
 }
 
 .buttonArea {
     text-align: right;
-    @include mt(30px);
+    @include mt(30px, 20px);
 }
 
 .hatchy {
@@ -100,6 +124,14 @@
 
     &.on {
         animation: aniLeft 1500ms linear both;
+    }
+
+    @include max(s) {
+        position: static;
+        width: 70vw;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
     }
 }
 
