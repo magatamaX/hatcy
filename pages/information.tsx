@@ -1,6 +1,6 @@
 import Layout from '../components/Layout/index'
 import Titlebox from '../components/common/Titlebox/index'
-import Items from '../components/information/Items'
+import Items from '../components/information/items'
 
 const list = [
   {
