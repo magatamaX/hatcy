@@ -2,8 +2,8 @@ import Link from 'next/link'
 import css from './style.scss'
 
 const Button = (
-    { size, color, text, path, shadow } :
-    { size: string, color: string, text: string, path: string, shadow: boolean }
+    { size, color, text, path, shadow, onClick } :
+    { size: string, color: string, text: string, path: string, shadow: boolean, onClick?: any }
     ) => (
     <Link href={path}>
         <a className={`${css.button} ${
@@ -18,7 +18,14 @@ const Button = (
             color === "yellow" ?
             css.yellow :
             ''
-        } ${shadow ? css.shadow : ''}`}>
+        } ${shadow ? css.shadow : ''}`}
+            onClick={(e: any) => {
+                if (onClick) {
+                    e.preventDefault()
+                    onClick()
+                }
+            }}
+        >
             {text}
         </a>
     </Link>

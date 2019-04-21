@@ -13,17 +13,17 @@ const Sns = ({ margin } : { margin?: number }) => {
         <ul className={`${css.sns} ${css.fFlex} ${css[mg]}`}>
             <li className={css.fFlex4}>
                 <Link href="">
-                    <a><Facebook /></a>
+                    <a className={`${css.link} ${css.facebook}`}><Facebook /></a>
                 </Link>
             </li>
             <li className={css.fFlex4}>
                 <Link href="">
-                    <a><Instagram /></a>
+                    <a className={`${css.link} ${css.instagram}`}><Instagram /></a>
                 </Link>
             </li>
             <li className={css.fFlex4}>
                 <Link href="">
-                    <a><Twitter /></a>
+                    <a className={`${css.link} ${css.twitter}`}><Twitter /></a>
                 </Link>
             </li>
         </ul>

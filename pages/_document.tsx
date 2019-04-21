@@ -17,6 +17,7 @@ class MyDocument extends Document {
           <style>{`body { margin: 0 } /* custom! */`}</style>
           <script src="https://use.typekit.net/chb4lrd.js" />
           <script dangerouslySetInnerHTML={{ __html: 'try{Typekit.load({ async: false });}catch(e){}' }} />
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver" />
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
           <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
           <link rel="stylesheet" type="text/css" href="/static/css/slick-fix.css" />

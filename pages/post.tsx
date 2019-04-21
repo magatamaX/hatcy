@@ -20,7 +20,7 @@ const articles = [
   }
 ]
 
-const Post = ( props: any )=> (
+const Post = ()=> (
   <Layout>
     <section>
       <Titlebox text="お知らせ" engText="Information" />
