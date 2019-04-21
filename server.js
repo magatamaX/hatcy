@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const auth = require('./auth')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -9,6 +10,8 @@ app
   .prepare()
   .then(() => {
     const server = express()
+
+    server.use(auth)
 
     server.get('/p/:id', (req, res) => {
         const actualPage = '/post'
